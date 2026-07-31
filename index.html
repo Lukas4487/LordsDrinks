@@ -76,24 +76,28 @@
 
         h1, h2, h3, h4, h5, h6, .font-playfair { font-family: 'Playfair Display', serif; }
 
-        /* Glassmorphism Classes */
+        /* Smoked Glassmorphism Classes (Vidro Fumê) */
         .glass {
-            background: rgba(27, 27, 27, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(200, 163, 77, 0.2);
+            background: rgba(11, 11, 11, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(200, 163, 77, 0.15);
+            box-shadow: inset 0 1px 0 rgba(200, 163, 77, 0.15);
         }
         
         .glass-card {
-            background: linear-gradient(145deg, rgba(27, 27, 27, 0.8), rgba(11, 11, 11, 0.9));
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
+            background: linear-gradient(145deg, rgba(20, 20, 20, 0.75), rgba(11, 11, 11, 0.85));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(200, 163, 77, 0.12);
+            box-shadow: inset 0 1px 0 rgba(200, 163, 77, 0.15);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .glass-card:hover {
-            border-color: rgba(200, 163, 77, 0.5);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(200, 163, 77, 0.2);
+            border-color: rgba(200, 163, 77, 0.4);
+            transform: translateY(-6px);
+            box-shadow: inset 0 1px 0 rgba(200, 163, 77, 0.25), 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(200, 163, 77, 0.12);
         }
 
         /* Gold Gradient Text */
@@ -237,15 +241,20 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="relative h-screen w-full flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
-    <!-- Overlay Gradient -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+<section id="hero-section" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="Cinematic_close_up_shot_extre.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Dark Overlay for legibility -->
+    <div class="absolute inset-0 bg-black/60 bg-gradient-to-t from-black via-black/50 to-black/40 z-0"></div>
     
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-24 flex flex-col lg:flex-row items-center h-full pt-20">
         
         <!-- Text Content -->
         <div class="w-full lg:w-3/5 text-center lg:text-left pt-10 lg:pt-0">
-            <p class="text-gold uppercase tracking-[0.2em] text-sm md:text-base mb-4 font-medium hero-elem opacity-0">Premium Bar Service</p>
+            <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4 font-medium hero-elem opacity-0">Premium Bar Service</p>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold leading-tight mb-6 hero-elem opacity-0">
                 Transformamos seu evento em uma <br/>
                 <span class="text-gradient-gold italic">experiência inesquecível.</span>
@@ -289,7 +298,7 @@
 </section>
 
 <!-- Sobre a Empresa -->
-<section id="sobre" class="py-24 relative">
+<section id="sobre" class="py-24 lg:py-32 xl:py-40 relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-24">
         <div class="flex flex-col lg:flex-row gap-16 items-center">
             
@@ -297,7 +306,7 @@
             <div class="w-full lg:w-1/2" data-aos="fade-right">
                 <div class="flex items-center gap-4 mb-4">
                     <div class="w-12 h-[1px] bg-gold"></div>
-                    <span class="text-gold uppercase tracking-widest text-sm">Sobre Nós</span>
+                    <span class="text-gold uppercase tracking-[0.3em] text-xs font-medium">Sobre Nós</span>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6">Elegância em cada <span class="text-gradient-gold">drink.</span></h2>
                 <div class="space-y-4 text-gray-text text-base leading-relaxed">
@@ -348,79 +357,82 @@
     </div>
 </section>
 
-<!-- Serviços -->
-<section id="servicos" class="py-24 bg-dark-gray relative overflow-hidden">
-    <!-- Decorative background elements -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px]"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px]"></div>
+<!-- Serviços - Video Hero Section -->
+<section id="servicos" class="relative min-h-screen w-full flex items-center justify-center py-24 lg:py-32 overflow-hidden border-t border-b border-white/5">
+    
+    <!-- Video Background Secundário -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <!-- Substitua pelo seu novo vídeo de serviços -->
+        <source src="Cinematic_medium_close_shot_.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Dark Overlay (Mais denso para destacar os cards de vidro) -->
+    <div class="absolute inset-0 bg-black/75 backdrop-blur-[2px] z-0"></div>
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <span class="text-gold uppercase tracking-widest text-sm font-medium">O que oferecemos</span>
-            <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-2">Nossos <span class="text-gradient-gold">Serviços</span></h2>
+    <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10 w-full">
+        <!-- Cabeçalho da Seção -->
+        <div class="text-center mb-16 lg:mb-24" data-aos="fade-up">
+            <span class="text-gold uppercase tracking-[0.3em] text-xs font-medium">O que oferecemos</span>
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-3">Nossos <span class="text-gradient-gold">Serviços</span></h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Grid 2x2 Cinematográfico -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             <!-- Service Card 1 -->
-            <div class="glass-card p-8 rounded-2xl group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/30">
-                    <i class="fas fa-store text-gold text-xl"></i>
+            <div class="glass-card p-8 lg:p-10 rounded-2xl group cursor-pointer transition-all duration-700 ease-out flex flex-col sm:flex-row items-start gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 shrink-0 bg-black/60 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 ease-out border border-gold/30 shadow-[inset_0_0_15px_rgba(200,163,77,0.15)]">
+                    <i class="fas fa-store text-gold text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors">Bar Completo</h3>
-                <p class="text-sm text-gray-text">Estrutura completa e requintada para qualquer tipo de evento, montada no local.</p>
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors duration-500 ease-out">Bar Completo</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">Estrutura completa e requintada para qualquer tipo de evento, montada no local.</p>
+                </div>
             </div>
 
             <!-- Service Card 2 -->
-            <div class="glass-card p-8 rounded-2xl group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/30">
-                    <i class="fas fa-user-tie text-gold text-xl"></i>
+            <div class="glass-card p-8 lg:p-10 rounded-2xl group cursor-pointer transition-all duration-700 ease-out flex flex-col sm:flex-row items-start gap-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 shrink-0 bg-black/60 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 ease-out border border-gold/30 shadow-[inset_0_0_15px_rgba(200,163,77,0.15)]">
+                    <i class="fas fa-user-tie text-gold text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors">Bartenders Profissionais</h3>
-                <p class="text-sm text-gray-text">Equipe rigorosamente treinada para um atendimento de alto padrão e agilidade.</p>
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors duration-500 ease-out">Bartenders Profissionais</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">Equipe rigorosamente treinada para um atendimento de alto padrão e agilidade.</p>
+                </div>
             </div>
 
             <!-- Service Card 3 -->
-            <div class="glass-card p-8 rounded-2xl group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/30">
-                    <i class="fas fa-martini-glass-empty text-gold text-xl"></i>
+            <div class="glass-card p-8 lg:p-10 rounded-2xl group cursor-pointer transition-all duration-700 ease-out flex flex-col sm:flex-row items-start gap-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 shrink-0 bg-black/60 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 ease-out border border-gold/30 shadow-[inset_0_0_15px_rgba(200,163,77,0.15)]">
+                    <i class="fas fa-martini-glass-empty text-gold text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors">Drinks Clássicos</h3>
-                <p class="text-sm text-gray-text">De Mojito a Negroni, perfeição na execução dos coquetéis mais famosos do mundo.</p>
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors duration-500 ease-out">Drinks Clássicos</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">De Mojito a Negroni, perfeição na execução dos coquetéis mais famosos do mundo.</p>
+                </div>
             </div>
 
             <!-- Service Card 4 -->
-            <div class="glass-card p-8 rounded-2xl group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/30">
-                    <i class="fas fa-flask text-gold text-xl"></i>
+            <div class="glass-card p-8 lg:p-10 rounded-2xl group cursor-pointer transition-all duration-700 ease-out flex flex-col sm:flex-row items-start gap-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-16 h-16 shrink-0 bg-black/60 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 ease-out border border-gold/30 shadow-[inset_0_0_15px_rgba(200,163,77,0.15)]">
+                    <i class="fas fa-flask text-gold text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors">Drinks Autorais</h3>
-                <p class="text-sm text-gray-text">Criações exclusivas e mixologia avançada desenvolvidas especialmente para o seu evento.</p>
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors duration-500 ease-out">Drinks Autorais</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">Criações exclusivas e mixologia avançada desenvolvidas especialmente para o seu evento.</p>
+                </div>
             </div>
 
-        </div>
-
-        <!-- Event Types -->
-        <div class="mt-16 border-t border-white/10 pt-16">
-            <h3 class="text-2xl font-playfair text-center mb-10">Atendemos todos os tipos de <span class="text-gold">Eventos Premium</span></h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="50">Casamentos</span>
-                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="100">Eventos Corporativos</span>
-                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="150">Formaturas</span>
-                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="200">Festas de 15 Anos</span>
-                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="250">Aniversários</span>
-                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="300">Confraternizações</span>
-            </div>
         </div>
     </div>
 </section>
 
 <!-- Galeria -->
-<section id="galeria" class="py-24">
+<section id="galeria" class="py-24 lg:py-32 xl:py-40">
     <div class="max-w-7xl mx-auto px-6 lg:px-24">
         <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-up">
             <div>
-                <span class="text-gold uppercase tracking-widest text-sm font-medium">Portfólio</span>
+                <span class="text-gold uppercase tracking-[0.3em] text-xs font-medium">Portfólio</span>
                 <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-2">Nossa <span class="text-gradient-gold">Galeria</span></h2>
             </div>
             <p class="text-gray-text text-sm max-w-sm mt-4 md:mt-0">Momentos inesquecíveis registrados através da nossa lente e do sorriso dos convidados.</p>
@@ -513,10 +525,10 @@
 </div>
 
 <!-- Nossos Drinks -->
-<section id="drinks" class="py-24 bg-dark-gray relative">
+<section id="drinks" class="py-24 lg:py-32 xl:py-40 bg-dark-gray relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-24">
         <div class="text-center mb-16" data-aos="fade-up">
-            <span class="text-gold uppercase tracking-widest text-sm font-medium">Carta Principal</span>
+            <span class="text-gold uppercase tracking-[0.3em] text-xs font-medium">Carta Principal</span>
             <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-2">Nossos <span class="text-gradient-gold">Drinks</span></h2>
         </div>
 
@@ -611,7 +623,7 @@
 </section>
 
 <!-- Diferenciais & Como Funciona -->
-<section class="py-24">
+<section class="py-24 lg:py-32 xl:py-40">
     <div class="max-w-7xl mx-auto px-6 lg:px-24">
         
         <!-- Diferenciais -->
@@ -662,7 +674,7 @@
         <!-- Como Funciona -->
         <div>
             <div class="text-center mb-16">
-                <span class="text-gold uppercase tracking-widest text-sm font-medium">Processo Simplificado</span>
+                <span class="text-gold uppercase tracking-[0.3em] text-xs font-medium">Processo Simplificado</span>
                 <h2 class="text-3xl md:text-4xl font-playfair font-bold mt-2">Como <span class="text-gradient-gold">Funciona</span></h2>
             </div>
 
@@ -710,14 +722,14 @@
 </section>
 
 <!-- Depoimentos e FAQ -->
-<section class="py-24 bg-dark-gray border-t border-b border-white/5">
+<section class="py-24 lg:py-32 xl:py-40 bg-dark-gray border-t border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-24">
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
             <!-- Depoimentos -->
             <div data-aos="fade-right">
-                <span class="text-gold uppercase tracking-widest text-sm font-medium">Experiências Reais</span>
+                <span class="text-gold uppercase tracking-[0.3em] text-xs font-medium">Experiências Reais</span>
                 <h2 class="text-3xl md:text-4xl font-playfair font-bold mt-2 mb-8">O que dizem <br><span class="text-gradient-gold">nossos clientes</span></h2>
                 
                 <div class="swiper testimonials-swiper">
@@ -818,7 +830,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 relative bg-cta-pattern bg-cover">
+<section class="py-20 lg:py-32 xl:py-36 relative bg-cta-pattern bg-cover">
     <div class="absolute inset-0 bg-gold/10 backdrop-blur-sm"></div>
     <div class="max-w-4xl mx-auto px-6 relative z-10 text-center" data-aos="zoom-in">
         <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-6">Vamos criar um evento <span class="text-gold">inesquecível?</span></h2>
@@ -950,7 +962,7 @@
             }
         });
 
-        // 4. GSAP Hero Entrance Animation
+        // 4. GSAP Hero Entrance Animation & Mouse Parallax
         gsap.to('.hero-elem', {
             y: 0,
             opacity: 1,
@@ -959,6 +971,45 @@
             ease: "power3.out",
             delay: 0.2
         });
+
+        // Hero Mouse Parallax for Floating Drink Cards
+        const heroSec = document.getElementById('hero-section');
+        const drink1 = document.getElementById('hero-drink-1');
+        const drink2 = document.getElementById('hero-drink-2');
+
+        if (heroSec && drink1 && drink2) {
+            heroSec.addEventListener('mousemove', (e) => {
+                const rect = heroSec.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                gsap.to(drink1, {
+                    x: -x * 0.04,
+                    y: -y * 0.04,
+                    rotation: -x * 0.008,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+
+                gsap.to(drink2, {
+                    x: x * 0.06,
+                    y: y * 0.06,
+                    rotation: x * 0.012,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+            });
+
+            heroSec.addEventListener('mouseleave', () => {
+                gsap.to([drink1, drink2], {
+                    x: 0,
+                    y: 0,
+                    rotation: 0,
+                    duration: 1.2,
+                    ease: "power2.out"
+                });
+            });
+        }
 
         // 5. Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
