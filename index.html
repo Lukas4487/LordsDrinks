@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lord's Drinks | Bar Premium para Eventos</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <meta name="description" content="Bar Premium para Casamentos, Formaturas, Eventos Corporativos e Festas. Drinks exclusivos, bartenders profissionais e estrutura completa.">
+    <meta name="keywords" content="bar para eventos, bar premium, bartender, open bar, casamento, eventos, drinks, bartender profissional, bar móvel, eventos corporativos">
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lord's Drinks | Bar Premium para Eventos">
+    <meta property="og:description" content="Bar Premium para Casamentos, Formaturas, Eventos Corporativos e Festas. Drinks exclusivos, bartenders profissionais e estrutura completa.">
+    <meta property="og:image" content="BAR_MONTADO.webp">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lord's Drinks | Bar Premium para Eventos">
+    <meta name="twitter:description" content="Bar Premium para Casamentos, Formaturas, Eventos Corporativos e Festas.">
+    <meta name="twitter:image" content="BAR_MONTADO.webp">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN for single file requirement) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black: '#0B0B0B',
+                        gold: '#C8A34D',
+                        'gold-light': '#E0C077',
+                        'dark-gray': '#1B1B1B',
+                        'gray-text': '#A0A0A0'
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(11, 11, 11, 0.4), rgba(11, 11, 11, 0.9)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop')",
+                        'cta-pattern': "linear-gradient(45deg, #0B0B0B 0%, #1B1B1B 100%)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specific premium effects -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0B0B0B; }
+        ::-webkit-scrollbar-thumb { background: #1B1B1B; border: 1px solid #C8A34D; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #C8A34D; }
+
+        body {
+            background-color: #0B0B0B;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Glassmorphism Classes */
+        .glass {
+            background: rgba(27, 27, 27, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(200, 163, 77, 0.2);
+        }
+        
+        .glass-card {
+            background: linear-gradient(145deg, rgba(27, 27, 27, 0.8), rgba(11, 11, 11, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(200, 163, 77, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(200, 163, 77, 0.2);
+        }
+
+        /* Gold Gradient Text */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #C8A34D, #E0C077, #C8A34D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        /* Float Animation */
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Timeline specific */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%; width: 2px; height: 100%;
+            background: linear-gradient(to bottom, transparent, #C8A34D, transparent);
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before { left: 20px; }
+        }
+
+        /* Button Hover Effects */
+        .btn-gold {
+            background: linear-gradient(45deg, #C8A34D, #b38f3d);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-gold::before {
+            content: '';
+            position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        .btn-gold:hover::before { left: 100%; }
+        
+        .btn-outline {
+            border: 1px solid #C8A34D;
+            color: #C8A34D;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background-color: #C8A34D;
+            color: #0B0B0B;
+        }
+
+        /* Gallery Lightbox (Simple CSS approach to avoid extra heavy JS libs) */
+        .gallery-item {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+        .gallery-item img {
+            transition: transform 0.6s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item::after {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(11, 11, 11, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+        .gallery-icon {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
+            color: #C8A34D; font-size: 2rem; z-index: 10;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-icon { transform: translate(-50%, -50%) scale(1); }
+
+        /* Modal Custom */
+        #imageModal { display: none; }
+        #imageModal.active { display: flex; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-black">
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 md:px-12 lg:px-24">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 z-50 group">
+            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-gold/50 group-hover:border-gold transition-colors">
+                <img src="LOGO.webp" alt="Lord's Drinks Logo" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/0B0B0B/C8A34D?text=LD'">
+            </div>
+            <span class="font-playfair text-xl md:text-2xl font-bold tracking-wider text-white">LORD'S <span class="text-gold">DRINKS</span></span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#sobre" class="text-sm font-medium hover:text-gold transition-colors">Sobre</a>
+            <a href="#servicos" class="text-sm font-medium hover:text-gold transition-colors">Serviços</a>
+            <a href="#drinks" class="text-sm font-medium hover:text-gold transition-colors">Drinks</a>
+            <a href="#galeria" class="text-sm font-medium hover:text-gold transition-colors">Galeria</a>
+            <a href="https://wa.me/556182552566" target="_blank" class="btn-gold text-black font-semibold px-6 py-2 rounded-full text-sm">
+                Orçamento
+            </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden z-50 text-2xl text-white focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-lg flex-col items-center justify-center gap-8 hidden z-40 transition-opacity opacity-0">
+        <a href="#sobre" class="mobile-link text-2xl font-playfair hover:text-gold transition-colors">Sobre</a>
+        <a href="#servicos" class="mobile-link text-2xl font-playfair hover:text-gold transition-colors">Serviços</a>
+        <a href="#drinks" class="mobile-link text-2xl font-playfair hover:text-gold transition-colors">Drinks</a>
+        <a href="#galeria" class="mobile-link text-2xl font-playfair hover:text-gold transition-colors">Galeria</a>
+        <a href="https://wa.me/556182552566" target="_blank" class="mobile-link btn-gold text-black font-semibold px-8 py-3 rounded-full mt-4">
+            Solicitar Orçamento
+        </a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+    <!-- Overlay Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-24 flex flex-col lg:flex-row items-center h-full pt-20">
+        
+        <!-- Text Content -->
+        <div class="w-full lg:w-3/5 text-center lg:text-left pt-10 lg:pt-0">
+            <p class="text-gold uppercase tracking-[0.2em] text-sm md:text-base mb-4 font-medium hero-elem opacity-0">Premium Bar Service</p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold leading-tight mb-6 hero-elem opacity-0">
+                Transformamos seu evento em uma <br/>
+                <span class="text-gradient-gold italic">experiência inesquecível.</span>
+            </h1>
+            <p class="text-gray-300 text-base md:text-lg lg:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 hero-elem opacity-0">
+                Drinks exclusivos, bartenders profissionais e uma estrutura completa para tornar seu evento único e sofisticado.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-elem opacity-0">
+                <a href="https://wa.me/556182552566" target="_blank" class="btn-gold text-black px-8 py-4 rounded-full font-semibold flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Solicitar Orçamento
+                </a>
+                <a href="#servicos" class="btn-outline px-8 py-4 rounded-full font-semibold flex items-center justify-center">
+                    Conheça nossos serviços
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Elements (Right Side) -->
+        <div class="hidden lg:flex w-full lg:w-2/5 justify-center relative h-[600px] items-center hero-elem opacity-0">
+            <!-- Glass Decorative Element -->
+            <div class="absolute w-[400px] h-[400px] border border-gold/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+            <div class="absolute w-[350px] h-[350px] border border-gold/40 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+            
+            <!-- Floating Drink Image 1 -->
+            <div class="absolute top-10 right-10 w-48 h-64 glass p-2 rounded-2xl float-anim shadow-2xl z-20">
+                <img src="DRING_MORANGO.webp" alt="Cocktail" class="w-full h-full object-cover rounded-xl">
+            </div>
+            <!-- Floating Drink Image 2 -->
+            <div class="absolute bottom-10 left-0 w-56 h-72 glass p-2 rounded-2xl float-anim shadow-2xl z-10" style="animation-delay: -3s;">
+                <img src="APEROL.webp" alt="Cocktail" class="w-full h-full object-cover rounded-xl">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce z-20">
+        <span class="text-xs text-gray-text mb-2 uppercase tracking-widest">Scroll</span>
+        <i class="fas fa-chevron-down text-gold"></i>
+    </div>
+</section>
+
+<!-- Sobre a Empresa -->
+<section id="sobre" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-24">
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+            
+            <!-- Text Content -->
+            <div class="w-full lg:w-1/2" data-aos="fade-right">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-[1px] bg-gold"></div>
+                    <span class="text-gold uppercase tracking-widest text-sm">Sobre Nós</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6">Elegância em cada <span class="text-gradient-gold">drink.</span></h2>
+                <div class="space-y-4 text-gray-text text-base leading-relaxed">
+                    <p>
+                        A <strong>Lord's Drinks</strong> nasceu para oferecer muito mais do que um serviço de bar. Nós entregamos sofisticação.
+                    </p>
+                    <p>
+                        Levamos para o seu evento uma experiência premium, unindo atendimento impecável, drinks exclusivos e autorais, bartenders altamente capacitados e uma estrutura completa que impressiona seus convidados do início ao fim.
+                    </p>
+                    <p>
+                        Cada detalhe é minuciosamente pensado para transformar momentos especiais em experiências memoráveis, refletindo o alto padrão que o seu evento merece.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="w-full lg:w-1/2 grid grid-cols-2 gap-6" data-aos="fade-left">
+                <!-- Stat Card 1 -->
+                <div class="glass-card p-6 rounded-2xl text-center border-t border-l border-white/10">
+                    <div class="text-gold text-3xl mb-3"><i class="fas fa-glass-cheers"></i></div>
+                    <h3 class="text-4xl font-playfair font-bold text-white mb-2 counter" data-target="500">0</h3>
+                    <p class="text-gold-light font-medium">+</p>
+                    <p class="text-sm text-gray-text mt-1">Eventos Realizados</p>
+                </div>
+                <!-- Stat Card 2 -->
+                <div class="glass-card p-6 rounded-2xl text-center border-t border-l border-white/10 mt-8">
+                    <div class="text-gold text-3xl mb-3"><i class="fas fa-cocktail"></i></div>
+                    <h3 class="text-4xl font-playfair font-bold text-white mb-2 counter" data-target="30">0</h3>
+                    <p class="text-gold-light font-medium">+</p>
+                    <p class="text-sm text-gray-text mt-1">Drinks Exclusivos</p>
+                </div>
+                <!-- Stat Card 3 -->
+                <div class="glass-card p-6 rounded-2xl text-center border-t border-l border-white/10">
+                    <div class="text-gold text-3xl mb-3"><i class="fas fa-star"></i></div>
+                    <h3 class="text-4xl font-playfair font-bold text-white mb-2 counter" data-target="100">0</h3>
+                    <p class="text-gold-light font-medium">%</p>
+                    <p class="text-sm text-gray-text mt-1">Clientes Satisfeitos</p>
+                </div>
+                <!-- Stat Card 4 -->
+                <div class="glass-card p-6 rounded-2xl text-center border-t border-l border-white/10 mt-8">
+                    <div class="text-gold text-3xl mb-3"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="text-2xl font-playfair font-bold text-white mb-2 pt-2">Premium</h3>
+                    <p class="text-sm text-gray-text mt-3">Equipe Especializada</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Serviços -->
+<section id="servicos" class="py-24 bg-dark-gray relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px]"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-gold uppercase tracking-widest text-sm font-medium">O que oferecemos</span>
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-2">Nossos <span class="text-gradient-gold">Serviços</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Service Card 1 -->
+            <div class="glass-card p-8 rounded-2xl group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/30">
+                    <i class="fas fa-store text-gold text-xl"></i>
+                </div>
+                <h3 class="text-xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors">Bar Completo</h3>
+                <p class="text-sm text-gray-text">Estrutura completa e requintada para qualquer tipo de evento, montada no local.</p>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="glass-card p-8 rounded-2xl group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/30">
+                    <i class="fas fa-user-tie text-gold text-xl"></i>
+                </div>
+                <h3 class="text-xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors">Bartenders Profissionais</h3>
+                <p class="text-sm text-gray-text">Equipe rigorosamente treinada para um atendimento de alto padrão e agilidade.</p>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="glass-card p-8 rounded-2xl group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/30">
+                    <i class="fas fa-martini-glass-empty text-gold text-xl"></i>
+                </div>
+                <h3 class="text-xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors">Drinks Clássicos</h3>
+                <p class="text-sm text-gray-text">De Mojito a Negroni, perfeição na execução dos coquetéis mais famosos do mundo.</p>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="glass-card p-8 rounded-2xl group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/30">
+                    <i class="fas fa-flask text-gold text-xl"></i>
+                </div>
+                <h3 class="text-xl font-playfair font-bold mb-3 text-white group-hover:text-gold transition-colors">Drinks Autorais</h3>
+                <p class="text-sm text-gray-text">Criações exclusivas e mixologia avançada desenvolvidas especialmente para o seu evento.</p>
+            </div>
+
+        </div>
+
+        <!-- Event Types -->
+        <div class="mt-16 border-t border-white/10 pt-16">
+            <h3 class="text-2xl font-playfair text-center mb-10">Atendemos todos os tipos de <span class="text-gold">Eventos Premium</span></h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="50">Casamentos</span>
+                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="100">Eventos Corporativos</span>
+                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="150">Formaturas</span>
+                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="200">Festas de 15 Anos</span>
+                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="250">Aniversários</span>
+                <span class="px-6 py-2 rounded-full border border-white/20 bg-black/50 text-sm hover:border-gold hover:text-gold transition-colors cursor-default" data-aos="zoom-in" data-aos-delay="300">Confraternizações</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Galeria -->
+<section id="galeria" class="py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-24">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-up">
+            <div>
+                <span class="text-gold uppercase tracking-widest text-sm font-medium">Portfólio</span>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-2">Nossa <span class="text-gradient-gold">Galeria</span></h2>
+            </div>
+            <p class="text-gray-text text-sm max-w-sm mt-4 md:mt-0">Momentos inesquecíveis registrados através da nossa lente e do sorriso dos convidados.</p>
+        </div>
+
+        <!-- Masonry-ish Grid via Tailwind columns -->
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+            
+            <!-- Item 1 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('BAR_MONTADO.webp')" data-aos="zoom-in">
+                <img src="BAR_MONTADO.webp" alt="Bar Montado Completo">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('CLIENTES.webp')" data-aos="zoom-in" data-aos-delay="100">
+                <img src="CLIENTES.webp" alt="Clientes aproveitando os drinks">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('BAR_PISCINA.webp')" data-aos="zoom-in" data-aos-delay="200">
+                <img src="BAR_PISCINA.webp" alt="Bar na Piscina">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('MARACUJA_LIMAO.webp')" data-aos="zoom-in" data-aos-delay="300">
+                <img src="MARACUJA_LIMAO.webp" alt="Insumos Maracujá e Limão">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('MORANGOS.webp')" data-aos="zoom-in" data-aos-delay="400">
+                <img src="MORANGOS.webp" alt="Morangos Frescos">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('CLIENTE_02.webp')" data-aos="zoom-in" data-aos-delay="500">
+                <img src="CLIENTE_02.webp" alt="Cliente com drink Aperol">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+            
+            <!-- Item 7 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('CARDAPIO_BEBIDAS_VISTA.webp')" data-aos="zoom-in" data-aos-delay="600">
+                <img src="CARDAPIO_BEBIDAS_VISTA.webp" alt="Cardápio de bebidas com vista da cidade">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+            
+            <!-- Item 8 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('CARDAPIO_BEBIDAS.webp')" data-aos="zoom-in" data-aos-delay="700">
+                <img src="CARDAPIO_BEBIDAS.webp" alt="Cardápio de bebidas em detalhe">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+            
+            <!-- Item 9 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('APEROL.webp')" data-aos="zoom-in" data-aos-delay="800">
+                <img src="APEROL.webp" alt="Garrafa de Aperol no bar">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+
+              <!-- Item 10 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('bartender.webp')" data-aos="zoom-in" data-aos-delay="500">
+                <img src="bartender.webp" alt="Area bartender">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+
+                    <!-- Item 11 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('bartender2.webp')" data-aos="zoom-in" data-aos-delay="500">
+                <img src="bartender2.webp" alt="Area bartender 2">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+
+             <!-- Item 12 -->
+            <div class="gallery-item break-inside-avoid shadow-lg" onclick="openLightbox('bartender3.webp')" data-aos="zoom-in" data-aos-delay="500">
+                <img src="bartender3.webp" alt="Area bartender 3">
+                <i class="fas fa-search-plus gallery-icon"></i>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Custom Lightbox Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black/95 z-[60] justify-center items-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-4xl hover:text-gold transition-colors z-[70]">&times;</button>
+    <img id="lightboxImg" src="" alt="Imagem Ampliada" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl border border-white/10">
+</div>
+
+<!-- Nossos Drinks -->
+<section id="drinks" class="py-24 bg-dark-gray relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-24">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-gold uppercase tracking-widest text-sm font-medium">Carta Principal</span>
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold mt-2">Nossos <span class="text-gradient-gold">Drinks</span></h2>
+        </div>
+
+        <!-- Swiper Carousel -->
+        <div class="swiper drinks-swiper pb-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="swiper-wrapper">
+                
+                <!-- Drink 1 -->
+                <div class="swiper-slide h-auto">
+                    <div class="glass-card h-full rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="SMIRNOFF_MELANCIA.webp" alt="Caipiroska de Melancia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-playfair font-bold text-gold mb-2">Caipiroska de Melancia</h3>
+                            <p class="text-xs text-gray-400 mb-4 uppercase tracking-widest">Vodka Smirnoff, Melancia, Limão</p>
+                            <p class="text-sm text-gray-text flex-grow">Refrescante e frutada, com o sabor marcante da melancia fresca. Uma das favoritas para dias quentes e eventos ao ar livre.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drink 2 -->
+                <div class="swiper-slide h-auto">
+                    <div class="glass-card h-full rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="DRING_MORANGO.webp" alt="Caipiroska de Morango" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-playfair font-bold text-gold mb-2">Caipiroska de Morango</h3>
+                            <p class="text-xs text-gray-400 mb-4 uppercase tracking-widest">Vodka, Morangos Frescos, Limão, Açúcar</p>
+                            <p class="text-sm text-gray-text flex-grow">Um clássico irresistível preparado com morangos rigorosamente selecionados para proporcionar o máximo de cor e sabor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drink 3 -->
+                <div class="swiper-slide h-auto">
+                    <div class="glass-card h-full rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="Negroni.webp" alt="Negroni" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-playfair font-bold text-gold mb-2">Negroni</h3>
+                            <p class="text-xs text-gray-400 mb-4 uppercase tracking-widest">Gin, Campari, Vermute Rosso, Casca de Laranja</p>
+                            <p class="text-sm text-gray-text flex-grow">Para paladares sofisticados. Equilíbrio perfeito entre o amargor e o doce, um clássico italiano atemporal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drink 4 -->
+                <div class="swiper-slide h-auto">
+                    <div class="glass-card h-full rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="DrinkAperol.webp" alt="Aperol Spritz" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" style="object-position: top;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-playfair font-bold text-gold mb-2">Aperol Spritz</h3>
+                            <p class="text-xs text-gray-400 mb-4 uppercase tracking-widest">Aperol, Prosecco, Água com Gás, Laranja</p>
+                            <p class="text-sm text-gray-text flex-grow">Leve, frisante e de baixo teor alcoólico. A escolha perfeita para recepcionar convidados com elegância.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drink 5 -->
+                <div class="swiper-slide h-auto">
+                    <div class="glass-card h-full rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="DrinkCosmopolitan.webp" alt="Cosmopolitan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-playfair font-bold text-gold mb-2">Cosmopolitan</h3>
+                            <p class="text-xs text-gray-400 mb-4 uppercase tracking-widest">Vodka Cítrus, Cointreau, Cranberry, Limão</p>
+                            <p class="text-sm text-gray-text flex-grow">Elegante e charmoso, de cor vibrante. Um mix doce e azedo na medida certa, servido em taça martini.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <a href="https://wa.me/556182552566" target="_blank" class="text-gold hover:text-white transition-colors underline underline-offset-4">Ver carta completa</a>
+        </div>
+    </div>
+</section>
+
+<!-- Diferenciais & Como Funciona -->
+<section class="py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-24">
+        
+        <!-- Diferenciais -->
+        <div class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">Por que escolher a <span class="text-gold">Lord's Drinks?</span></h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
+                <!-- Items -->
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="50">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Estrutura Completa</span>
+                </div>
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Bartenders Uniformizados</span>
+                </div>
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Atendimento Personalizado</span>
+                </div>
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Drinks Premium</span>
+                </div>
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Ingredientes Selecionados</span>
+                </div>
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Copos e Taças Inclusos</span>
+                </div>
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Gelo de Qualidade</span>
+                </div>
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Decoração do Bar</span>
+                </div>
+                <div class="flex items-center gap-4 glass p-4 rounded-xl" data-aos="fade-up" data-aos-delay="450">
+                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-check"></i></div>
+                    <span class="font-medium">Pontualidade Britânica</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Como Funciona -->
+        <div>
+            <div class="text-center mb-16">
+                <span class="text-gold uppercase tracking-widest text-sm font-medium">Processo Simplificado</span>
+                <h2 class="text-3xl md:text-4xl font-playfair font-bold mt-2">Como <span class="text-gradient-gold">Funciona</span></h2>
+            </div>
+
+            <div class="relative timeline-line max-w-4xl mx-auto">
+                
+                <!-- Step 1 -->
+                <div class="relative z-10 flex md:justify-end mb-12 w-full md:w-1/2 ml-auto" data-aos="fade-up">
+                    <div class="absolute md:-left-[24px] left-[6px] top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-black border-4 border-gold flex items-center justify-center text-xs font-bold text-white z-20">1</div>
+                    <div class="glass-card p-6 rounded-xl w-[calc(100%-40px)] md:w-[90%] ml-auto md:mr-10 text-left md:text-right">
+                        <h4 class="text-xl font-playfair font-bold text-gold mb-2">Solicite seu Orçamento</h4>
+                        <p class="text-sm text-gray-text">Entre em contato via WhatsApp detalhando o tipo, local e data do evento.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex md:justify-start mb-12 w-full md:w-1/2 mr-auto" data-aos="fade-up">
+                    <div class="absolute md:-right-[24px] left-[6px] top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-black border-4 border-gold flex items-center justify-center text-xs font-bold text-white z-20">2</div>
+                    <div class="glass-card p-6 rounded-xl w-[calc(100%-40px)] md:w-[90%] ml-[40px] md:ml-0 md:ml-10 text-left">
+                        <h4 class="text-xl font-playfair font-bold text-gold mb-2">Proposta Personalizada</h4>
+                        <p class="text-sm text-gray-text">Nossa equipe elabora um cardápio e estrutura ideais para o seu perfil e número de convidados.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex md:justify-end mb-12 w-full md:w-1/2 ml-auto" data-aos="fade-up">
+                    <div class="absolute md:-left-[24px] left-[6px] top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-black border-4 border-gold flex items-center justify-center text-xs font-bold text-white z-20">3</div>
+                    <div class="glass-card p-6 rounded-xl w-[calc(100%-40px)] md:w-[90%] ml-auto md:mr-10 text-left md:text-right">
+                        <h4 class="text-xl font-playfair font-bold text-gold mb-2">Planejamento</h4>
+                        <p class="text-sm text-gray-text">Aprovado o orçamento, alinhamos todos os detalhes, desde a louça até a degustação.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative z-10 flex md:justify-start mb-12 w-full md:w-1/2 mr-auto" data-aos="fade-up">
+                    <div class="absolute md:-right-[24px] left-[6px] top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-black border-4 border-gold flex items-center justify-center text-xs font-bold text-white z-20">4</div>
+                    <div class="glass-card p-6 rounded-xl w-[calc(100%-40px)] md:w-[90%] ml-[40px] md:ml-0 md:ml-10 text-left">
+                        <h4 class="text-xl font-playfair font-bold text-gold mb-2">Montagem e Execução</h4>
+                        <p class="text-sm text-gray-text">Chegamos com antecedência para montar o bar e iniciar o serviço com excelência no horário marcado.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Depoimentos e FAQ -->
+<section class="py-24 bg-dark-gray border-t border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-24">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- Depoimentos -->
+            <div data-aos="fade-right">
+                <span class="text-gold uppercase tracking-widest text-sm font-medium">Experiências Reais</span>
+                <h2 class="text-3xl md:text-4xl font-playfair font-bold mt-2 mb-8">O que dizem <br><span class="text-gradient-gold">nossos clientes</span></h2>
+                
+                <div class="swiper testimonials-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Depoimento 1 -->
+                        <div class="swiper-slide pb-10">
+                            <div class="glass-card p-8 rounded-2xl relative">
+                                <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-white/10"></i>
+                                <div class="text-gold mb-4 text-sm">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-gray-300 italic mb-6">"A melhor experiência que tivemos em nosso casamento. O bar foi o ponto alto da festa, drinks perfeitos e a equipe super animada e educada!"</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold">C</div>
+                                    <div>
+                                        <h5 class="font-bold text-white text-sm">Camila & Rafael</h5>
+                                        <span class="text-xs text-gray-text">Casamento</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Depoimento 2 -->
+                        <div class="swiper-slide pb-10">
+                            <div class="glass-card p-8 rounded-2xl relative">
+                                <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-white/10"></i>
+                                <div class="text-gold mb-4 text-sm">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-gray-300 italic mb-6">"Contratamos para um evento corporativo e superou as expectativas. Profissionalismo incrível, estrutura linda. Recomendo de olhos fechados."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold">M</div>
+                                    <div>
+                                        <h5 class="font-bold text-white text-sm">Marcos Silva</h5>
+                                        <span class="text-xs text-gray-text">Evento Corporativo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div data-aos="fade-left">
+                <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-8">Dúvidas <span class="text-gold">Frequentes</span></h2>
+                
+                <div class="space-y-4">
+                    <!-- Item 1 -->
+                    <details class="glass group rounded-xl cursor-pointer">
+                        <summary class="flex justify-between items-center font-medium p-5 text-white/90">
+                            Vocês atendem qualquer cidade?
+                            <span class="transition group-open:rotate-180 text-gold"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/10 mt-2">
+                            Nosso foco principal é Brasília e região (Entorno). Para outras cidades e estados, avaliamos a viabilidade logística. Entre em contato para consultarmos.
+                        </div>
+                    </details>
+
+                    <!-- Item 2 -->
+                    <details class="glass group rounded-xl cursor-pointer">
+                        <summary class="flex justify-between items-center font-medium p-5 text-white/90">
+                            Os insumos (bebidas, frutas) estão inclusos?
+                            <span class="transition group-open:rotate-180 text-gold"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/10 mt-2">
+                            Sim, trabalhamos no sistema "Open Bar", onde fornecemos toda a bebida, frutas, xaropes, gelo, copos e estrutura. Você não precisa se preocupar com nada.
+                        </div>
+                    </details>
+
+                    <!-- Item 3 -->
+                    <details class="glass group rounded-xl cursor-pointer">
+                        <summary class="flex justify-between items-center font-medium p-5 text-white/90">
+                            Quantos bartenders vão ao evento?
+                            <span class="transition group-open:rotate-180 text-gold"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/10 mt-2">
+                            Dimensionamos a equipe com base no número de convidados para garantir um atendimento rápido e sem filas. Geralmente, recomendamos 1 bartender a cada 40-50 convidados.
+                        </div>
+                    </details>
+
+                    <!-- Item 4 -->
+                    <details class="glass group rounded-xl cursor-pointer">
+                        <summary class="flex justify-between items-center font-medium p-5 text-white/90">
+                            Como funciona o orçamento?
+                            <span class="transition group-open:rotate-180 text-gold"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/10 mt-2">
+                            Basta nos enviar uma mensagem no WhatsApp com a data, local, número de convidados e tipo de evento. Montamos uma proposta com cardápios sugeridos para sua escolha.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 relative bg-cta-pattern bg-cover">
+    <div class="absolute inset-0 bg-gold/10 backdrop-blur-sm"></div>
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center" data-aos="zoom-in">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-6">Vamos criar um evento <span class="text-gold">inesquecível?</span></h2>
+        <p class="text-gray-200 mb-10 text-lg">Garanta a melhor experiência de coquetelaria para você e seus convidados. Datas limitadas.</p>
+        <a href="https://wa.me/556182552566" target="_blank" class="btn-gold text-black px-10 py-5 rounded-full font-bold text-lg inline-flex items-center gap-3 shadow-[0_0_30px_rgba(200,163,77,0.4)] hover:shadow-[0_0_50px_rgba(200,163,77,0.6)] transition-all">
+            <i class="fab fa-whatsapp text-2xl"></i> Falar com Especialista
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black pt-16 pb-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            <!-- Brand -->
+            <div>
+                <a href="#" class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full overflow-hidden border border-gold">
+                        <img src="LOGO.webp" alt="Logo" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/0B0B0B/C8A34D?text=LD'">
+                    </div>
+                    <span class="font-playfair text-xl font-bold tracking-wider text-white">LORD'S <span class="text-gold">DRINKS</span></span>
+                </a>
+                <p class="text-sm text-gray-500 mb-6">Elevando o padrão de coquetelaria em eventos. Experiência, luxo e sabor em cada detalhe.</p>
+                <div class="flex gap-4">
+                    <a href="https://instagram.com/lords_drinkseeventos" target="_blank" class="w-10 h-10 rounded-full bg-dark-gray flex items-center justify-center text-white hover:bg-gold hover:text-black transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/556182552566" target="_blank" class="w-10 h-10 rounded-full bg-dark-gray flex items-center justify-center text-white hover:bg-gold hover:text-black transition-colors"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h4 class="text-white font-playfair font-bold text-lg mb-6">Links Rápidos</h4>
+                <ul class="space-y-3">
+                    <li><a href="#sobre" class="text-sm text-gray-500 hover:text-gold transition-colors">Sobre Nós</a></li>
+                    <li><a href="#servicos" class="text-sm text-gray-500 hover:text-gold transition-colors">Nossos Serviços</a></li>
+                    <li><a href="#drinks" class="text-sm text-gray-500 hover:text-gold transition-colors">Carta de Drinks</a></li>
+                    <li><a href="#galeria" class="text-sm text-gray-500 hover:text-gold transition-colors">Galeria</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div>
+                <h4 class="text-white font-playfair font-bold text-lg mb-6">Contato</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-sm text-gray-500">
+                        <i class="fab fa-whatsapp text-gold mt-1"></i>
+                        <span>(61) 8255-2566<br>Atendimento via WhatsApp</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-500">
+                        <i class="far fa-envelope text-gold mt-1"></i>
+                        <span>contato@lordsdrinks.com.br</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt text-gold mt-1"></i>
+                        <span>Brasília, DF e Entorno<br>Atendemos no local.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Instagram Feed Placeholder -->
+            <div>
+                <h4 class="text-white font-playfair font-bold text-lg mb-6">Instagram</h4>
+                <div class="grid grid-cols-3 gap-2">
+                    <img src="BAR_MONTADO.webp" class="w-full h-20 object-cover rounded-sm opacity-80 hover:opacity-100 transition" alt="Insta 1">
+                    <img src="CLIENTES.webp" class="w-full h-20 object-cover rounded-sm opacity-80 hover:opacity-100 transition" alt="Insta 2">
+                    <img src="DRING_MORANGO.webp" class="w-full h-20 object-cover rounded-sm opacity-80 hover:opacity-100 transition" alt="Insta 3">
+                    <img src="bartender.webp" class="w-full h-20 object-cover rounded-sm opacity-80 hover:opacity-100 transition" alt="Insta 4">
+                    <img src="CARDAPIO_BEBIDAS_VISTA.webp" class="w-full h-20 object-cover rounded-sm opacity-80 hover:opacity-100 transition" alt="Insta 5">
+                    <img src="APEROL.webp" class="w-full h-20 object-cover rounded-sm opacity-80 hover:opacity-100 transition" alt="Insta 6">
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-gray-600">&copy; 2026 Lord's Drinks. Todos os direitos reservados.</p>
+            <div class="text-xs text-gray-600 flex gap-4">
+                <a href="#" class="hover:text-gold">Política de Privacidade</a>
+                <a href="#" class="hover:text-gold">Termos de Serviço</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/556182552566?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20evento." target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-lg shadow-green-500/30 hover:-translate-y-2 transition-transform z-50 animate-pulse hover:animate-none">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        // 1. Initialize AOS (Scroll Animations)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+
+        // 2. Initialize Swiper for Drinks
+        const drinksSwiper = new Swiper('.drinks-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 30 },
+            }
+        });
+
+        // 3. Initialize Swiper for Testimonials
+        const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+            }
+        });
+
+        // 4. GSAP Hero Entrance Animation
+        gsap.to('.hero-elem', {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.2
+        });
+
+        // 5. Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/90', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-white/5');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('bg-black/90', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-white/5', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // 6. Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+                setTimeout(() => menu.classList.remove('opacity-0'), 10);
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                menu.classList.add('opacity-0');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                }, 300);
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('opacity-0');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                }, 300);
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // 7. Counter Animation (About Section)
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Intersection Observer to trigger counter when visible
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                startCounters();
+                observer.disconnect(); // Run once
+            }
+        });
+        
+        const aboutSection = document.getElementById('sobre');
+        if(aboutSection) observer.observe(aboutSection);
+
+    });
+
+    // 8. Custom Lightbox Functions
+    function openLightbox(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const img = document.getElementById('lightboxImg');
+        img.src = imageSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    function closeLightbox() {
+        const modal = document.getElementById('imageModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Close lightbox on click outside image
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeLightbox();
+        }
+    });
+</script>
+
+</body>
+</html>
